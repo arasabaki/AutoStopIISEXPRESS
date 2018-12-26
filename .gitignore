@@ -7,3 +7,6 @@
 /.vs
 /AutoStopIISEXPRESS/bin/Debug
 /AutoStopIISEXPRESS/packages
+/AutoStopIISEXPRESS/bin/Release
+/AutoStopIISEXPRESS/obj/Release
+/AutoStopIISEXPRESS/AutoStopIISEXPRESS.csproj.user

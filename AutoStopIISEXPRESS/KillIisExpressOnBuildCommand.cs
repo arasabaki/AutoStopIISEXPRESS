@@ -115,12 +115,11 @@ namespace AutoStopIISEXPRESS
         private void BuildEvents_OnBuildBegin(EnvDTE.vsBuildScope Scope, EnvDTE.vsBuildAction Action)
         {
             const string targetProcessName = "iisexpress";
-            foreach (var process in System.Diagnostics.Process.GetProcessesByName(targetProcessName))
+            var processes = System.Diagnostics.Process.GetProcessesByName(targetProcessName);
+            foreach (var process in processes)
             {
-                if (process.ProcessName == targetProcessName)
-                {
-                    process.Kill();
-                }
+                process.Kill();
+                process.WaitForExit();
             }
         }
     }
